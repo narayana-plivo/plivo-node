@@ -97,5 +97,5 @@ gulp.task('lintFix', function () {
 });
 
 
-gulp.task('prepublish', ['babel']);
-gulp.task('default', ['static', 'test', 'coveralls']);
+gulp.task('prepublish', gulp.series('babel'));
+gulp.task('default', gulp.series('static', 'test', 'coveralls'));
